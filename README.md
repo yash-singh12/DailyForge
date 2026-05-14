@@ -230,6 +230,7 @@ Open `http://localhost:5173`, sign up for an account, and start building your ro
 
 ## 🔐 Environment Variables
 
+
 ### Backend — `backend/.env`
 
 Create this file manually. **Never commit it to git.**
@@ -238,6 +239,7 @@ Create this file manually. **Never commit it to git.**
 PORT=5000
 MONGO_URI=your_mongodb_atlas_connection_string
 JWT_SECRET=your_super_secret_key_here
+#CLIENT_ORIGIN=your_deployed_frontend_url
 ```
 
 | Variable | Required | Description |
@@ -245,6 +247,7 @@ JWT_SECRET=your_super_secret_key_here
 | `PORT` | ✅ | Port on which the Express server runs (default: `5000`) |
 | `MONGO_URI` | ✅ | Full MongoDB Atlas connection string — get it from your Atlas cluster's "Connect" menu |
 | `JWT_SECRET` | ✅ | Secret key for signing JWTs — use any long, random string (e.g., `openssl rand -hex 32`) |
+| `CLIENT_ORIGIN` | ⬜ | *(Optional)* Allowed CORS origin for API requests. Set this to your production frontend URL (e.g., `https://dailyforge-frontend-lhjq.onrender.com`). If not set, it defaults to `http://localhost:5173` for local development. |
 
 **How to get `MONGO_URI`:**
 1. Log into [MongoDB Atlas](https://cloud.mongodb.com)
